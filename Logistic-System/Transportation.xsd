@@ -68,7 +68,20 @@ SELECT Id, SenderId, DepartureStationId, ArrivalStationId, Worth FROM Cargoes WH
               <Mapping SourceColumn="ArrivalStationId" DataSetColumn="ArrivalStationId" />
               <Mapping SourceColumn="Worth" DataSetColumn="Worth" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="TransportationConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Cargoes.Id, Senders.Name AS Відправник, Station1.Name AS [Станція відправлення], Station2.Name AS [Станція прибуття], Cargoes.Worth AS [Вартість вантажу]
+FROM            Cargoes INNER JOIN
+                         Senders ON Cargoes.SenderId = Senders.Id INNER JOIN
+                         Stations AS Station1 ON Cargoes.DepartureStationId = Station1.Id INNER JOIN
+                         Stations AS Station2 ON Cargoes.ArrivalStationId = Station2.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TransportsTableAdapter" GeneratorDataComponentClassName="TransportsTableAdapter" Name="Transports" UserDataComponentName="TransportsTableAdapter">
             <MainSource>
@@ -131,7 +144,17 @@ SELECT Id, Name, MaxWeight, WeightDistancePrice, Weight FROM Transports WHERE (I
               <Mapping SourceColumn="WeightDistancePrice" DataSetColumn="WeightDistancePrice" />
               <Mapping SourceColumn="Weight" DataSetColumn="Weight" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="TransportationConnectionString (Settings)" DbObjectName="dbo.Transports" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Id, Name, MaxWeight, WeightDistancePrice, Weight
+FROM            Transports</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DistancesTableAdapter" GeneratorDataComponentClassName="DistancesTableAdapter" Name="Distances" UserDataComponentName="DistancesTableAdapter">
             <MainSource>
@@ -370,7 +393,7 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
   <xs:element name="Transportation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Transportation" msprop:Generator_UserDSName="Transportation">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Cargoes" msprop:Generator_TableClassName="CargoesDataTable" msprop:Generator_TableVarName="tableCargoes" msprop:Generator_TablePropName="Cargoes" msprop:Generator_RowDeletingName="CargoesRowDeleting" msprop:Generator_RowChangingName="CargoesRowChanging" msprop:Generator_RowEvHandlerName="CargoesRowChangeEventHandler" msprop:Generator_RowDeletedName="CargoesRowDeleted" msprop:Generator_UserTableName="Cargoes" msprop:Generator_RowChangedName="CargoesRowChanged" msprop:Generator_RowEvArgName="CargoesRowChangeEvent" msprop:Generator_RowClassName="CargoesRow">
+        <xs:element name="Cargoes" msprop:Generator_TableClassName="CargoesDataTable" msprop:Generator_TableVarName="tableCargoes" msprop:Generator_RowChangedName="CargoesRowChanged" msprop:Generator_TablePropName="Cargoes" msprop:Generator_RowDeletingName="CargoesRowDeleting" msprop:Generator_RowChangingName="CargoesRowChanging" msprop:Generator_RowEvHandlerName="CargoesRowChangeEventHandler" msprop:Generator_RowDeletedName="CargoesRowDeleted" msprop:Generator_RowClassName="CargoesRow" msprop:Generator_UserTableName="Cargoes" msprop:Generator_RowEvArgName="CargoesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -381,7 +404,7 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Transports" msprop:Generator_TableClassName="TransportsDataTable" msprop:Generator_TableVarName="tableTransports" msprop:Generator_TablePropName="Transports" msprop:Generator_RowDeletingName="TransportsRowDeleting" msprop:Generator_RowChangingName="TransportsRowChanging" msprop:Generator_RowEvHandlerName="TransportsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransportsRowDeleted" msprop:Generator_UserTableName="Transports" msprop:Generator_RowChangedName="TransportsRowChanged" msprop:Generator_RowEvArgName="TransportsRowChangeEvent" msprop:Generator_RowClassName="TransportsRow">
+        <xs:element name="Transports" msprop:Generator_TableClassName="TransportsDataTable" msprop:Generator_TableVarName="tableTransports" msprop:Generator_RowChangedName="TransportsRowChanged" msprop:Generator_TablePropName="Transports" msprop:Generator_RowDeletingName="TransportsRowDeleting" msprop:Generator_RowChangingName="TransportsRowChanging" msprop:Generator_RowEvHandlerName="TransportsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransportsRowDeleted" msprop:Generator_RowClassName="TransportsRow" msprop:Generator_UserTableName="Transports" msprop:Generator_RowEvArgName="TransportsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -398,7 +421,7 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Distances" msprop:Generator_TableClassName="DistancesDataTable" msprop:Generator_TableVarName="tableDistances" msprop:Generator_TablePropName="Distances" msprop:Generator_RowDeletingName="DistancesRowDeleting" msprop:Generator_RowChangingName="DistancesRowChanging" msprop:Generator_RowEvHandlerName="DistancesRowChangeEventHandler" msprop:Generator_RowDeletedName="DistancesRowDeleted" msprop:Generator_UserTableName="Distances" msprop:Generator_RowChangedName="DistancesRowChanged" msprop:Generator_RowEvArgName="DistancesRowChangeEvent" msprop:Generator_RowClassName="DistancesRow">
+        <xs:element name="Distances" msprop:Generator_TableClassName="DistancesDataTable" msprop:Generator_TableVarName="tableDistances" msprop:Generator_RowChangedName="DistancesRowChanged" msprop:Generator_TablePropName="Distances" msprop:Generator_RowDeletingName="DistancesRowDeleting" msprop:Generator_RowChangingName="DistancesRowChanging" msprop:Generator_RowEvHandlerName="DistancesRowChangeEventHandler" msprop:Generator_RowDeletedName="DistancesRowDeleted" msprop:Generator_RowClassName="DistancesRow" msprop:Generator_UserTableName="Distances" msprop:Generator_RowEvArgName="DistancesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -408,7 +431,7 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Senders" msprop:Generator_TableClassName="SendersDataTable" msprop:Generator_TableVarName="tableSenders" msprop:Generator_TablePropName="Senders" msprop:Generator_RowDeletingName="SendersRowDeleting" msprop:Generator_RowChangingName="SendersRowChanging" msprop:Generator_RowEvHandlerName="SendersRowChangeEventHandler" msprop:Generator_RowDeletedName="SendersRowDeleted" msprop:Generator_UserTableName="Senders" msprop:Generator_RowChangedName="SendersRowChanged" msprop:Generator_RowEvArgName="SendersRowChangeEvent" msprop:Generator_RowClassName="SendersRow">
+        <xs:element name="Senders" msprop:Generator_TableClassName="SendersDataTable" msprop:Generator_TableVarName="tableSenders" msprop:Generator_RowChangedName="SendersRowChanged" msprop:Generator_TablePropName="Senders" msprop:Generator_RowDeletingName="SendersRowDeleting" msprop:Generator_RowChangingName="SendersRowChanging" msprop:Generator_RowEvHandlerName="SendersRowChangeEventHandler" msprop:Generator_RowDeletedName="SendersRowDeleted" msprop:Generator_RowClassName="SendersRow" msprop:Generator_UserTableName="Senders" msprop:Generator_RowEvArgName="SendersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -426,11 +449,11 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Stations" msprop:Generator_TableClassName="StationsDataTable" msprop:Generator_TableVarName="tableStations" msprop:Generator_TablePropName="Stations" msprop:Generator_RowDeletingName="StationsRowDeleting" msprop:Generator_RowChangingName="StationsRowChanging" msprop:Generator_RowEvHandlerName="StationsRowChangeEventHandler" msprop:Generator_RowDeletedName="StationsRowDeleted" msprop:Generator_UserTableName="Stations" msprop:Generator_RowChangedName="StationsRowChanged" msprop:Generator_RowEvArgName="StationsRowChangeEvent" msprop:Generator_RowClassName="StationsRow">
+        <xs:element name="Stations" msprop:Generator_TableClassName="StationsDataTable" msprop:Generator_TableVarName="tableStations" msprop:Generator_RowChangedName="StationsRowChanged" msprop:Generator_TablePropName="Stations" msprop:Generator_RowDeletingName="StationsRowDeleting" msprop:Generator_RowChangingName="StationsRowChanging" msprop:Generator_RowEvHandlerName="StationsRowChangeEventHandler" msprop:Generator_RowDeletedName="StationsRowDeleted" msprop:Generator_RowClassName="StationsRow" msprop:Generator_UserTableName="Stations" msprop:Generator_RowEvArgName="StationsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -444,7 +467,7 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Transits" msprop:Generator_TableClassName="TransitsDataTable" msprop:Generator_TableVarName="tableTransits" msprop:Generator_TablePropName="Transits" msprop:Generator_RowDeletingName="TransitsRowDeleting" msprop:Generator_RowChangingName="TransitsRowChanging" msprop:Generator_RowEvHandlerName="TransitsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransitsRowDeleted" msprop:Generator_UserTableName="Transits" msprop:Generator_RowChangedName="TransitsRowChanged" msprop:Generator_RowEvArgName="TransitsRowChangeEvent" msprop:Generator_RowClassName="TransitsRow">
+        <xs:element name="Transits" msprop:Generator_TableClassName="TransitsDataTable" msprop:Generator_TableVarName="tableTransits" msprop:Generator_RowChangedName="TransitsRowChanged" msprop:Generator_TablePropName="Transits" msprop:Generator_RowDeletingName="TransitsRowDeleting" msprop:Generator_RowChangingName="TransitsRowChanging" msprop:Generator_RowEvHandlerName="TransitsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransitsRowDeleted" msprop:Generator_RowClassName="TransitsRow" msprop:Generator_UserTableName="Transits" msprop:Generator_RowEvArgName="TransitsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -501,23 +524,19 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
       <xs:selector xpath=".//mstns:Transits" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
-    <xs:keyref name="Transport_Transit" refer="Transports_Constraint1" msdata:ConstraintOnly="true">
+    <xs:keyref name="Cargo_Transit" refer="Constraint1" msdata:ConstraintOnly="true">
       <xs:selector xpath=".//mstns:Transits" />
-      <xs:field xpath="mstns:TransportId" />
+      <xs:field xpath="mstns:CargoId" />
     </xs:keyref>
     <xs:keyref name="Station_Transit" refer="Stations_Constraint1" msdata:ConstraintOnly="true">
       <xs:selector xpath=".//mstns:Transits" />
       <xs:field xpath="mstns:StationId" />
     </xs:keyref>
-    <xs:keyref name="Cargo_Transit" refer="Constraint1" msdata:ConstraintOnly="true">
+    <xs:keyref name="Transport_Transit" refer="Transports_Constraint1" msdata:ConstraintOnly="true">
       <xs:selector xpath=".//mstns:Transits" />
-      <xs:field xpath="mstns:CargoId" />
+      <xs:field xpath="mstns:TransportId" />
     </xs:keyref>
-    <xs:keyref name="Distance_Arrival" refer="Distances_Constraint2" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Stations" />
-      <xs:field xpath="mstns:Id" />
-    </xs:keyref>
-    <xs:keyref name="Distance_Departure" refer="Distances_Constraint3" msdata:ConstraintOnly="true">
+    <xs:keyref name="Cargo_Departure" refer="Constraint3" msdata:ConstraintOnly="true" msdata:UpdateRule="SetNull" msdata:DeleteRule="SetNull">
       <xs:selector xpath=".//mstns:Stations" />
       <xs:field xpath="mstns:Id" />
     </xs:keyref>
@@ -525,7 +544,11 @@ SELECT Id, CargoId, TransportId, StationId, DateTime FROM Transits WHERE (Id = @
       <xs:selector xpath=".//mstns:Stations" />
       <xs:field xpath="mstns:Id" />
     </xs:keyref>
-    <xs:keyref name="Cargo_Departure" refer="Constraint3" msdata:ConstraintOnly="true" msdata:UpdateRule="SetNull" msdata:DeleteRule="SetNull">
+    <xs:keyref name="Distance_Departure" refer="Distances_Constraint3" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Stations" />
+      <xs:field xpath="mstns:Id" />
+    </xs:keyref>
+    <xs:keyref name="Distance_Arrival" refer="Distances_Constraint2" msdata:ConstraintOnly="true">
       <xs:selector xpath=".//mstns:Stations" />
       <xs:field xpath="mstns:Id" />
     </xs:keyref>

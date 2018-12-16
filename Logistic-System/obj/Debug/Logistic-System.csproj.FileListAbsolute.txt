@@ -1,0 +1,12 @@
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic-System.csprojAssemblyReference.cache
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic_System.MainForm.resources
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic_System.Properties.Resources.resources
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic-System.csproj.GenerateResource.cache
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic-System.csproj.CoreCompileInputs.cache
+D:\Projects\GitHub\Logistic-System\Logistic-System\bin\Debug\Transportation.mdf
+D:\Projects\GitHub\Logistic-System\Logistic-System\bin\Debug\Transportation_log.ldf
+D:\Projects\GitHub\Logistic-System\Logistic-System\bin\Debug\Logistic-System.exe.config
+D:\Projects\GitHub\Logistic-System\Logistic-System\bin\Debug\Logistic-System.exe
+D:\Projects\GitHub\Logistic-System\Logistic-System\bin\Debug\Logistic-System.pdb
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic-System.exe
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic-System.pdb
