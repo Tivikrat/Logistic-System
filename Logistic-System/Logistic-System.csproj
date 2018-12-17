@@ -61,6 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCargo.Designer.cs">
+      <DependentUpon>AddCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSender.Designer.cs">
+      <DependentUpon>AddSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStation.Designer.cs">
+      <DependentUpon>AddStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTransport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTransport.Designer.cs">
+      <DependentUpon>AddTransport.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +101,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Transportation.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCargo.resx">
+      <DependentUpon>AddCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSender.resx">
+      <DependentUpon>AddSender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStation.resx">
+      <DependentUpon>AddStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTransport.resx">
+      <DependentUpon>AddTransport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +124,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

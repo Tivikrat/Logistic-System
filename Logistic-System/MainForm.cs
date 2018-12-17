@@ -68,5 +68,22 @@ namespace Logistic_System
             }
 
         }
+
+        private void CargoNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            AddCargo addCargo = new AddCargo();
+            addCargo.ShowDialog();
+        }
+
+        private void bindingNavigatorAddNewItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            AddStation addStation = new AddStation();
+            addStation.ShowDialog();
+        }
     }
 }

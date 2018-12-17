@@ -631,10 +631,10 @@ namespace Logistic_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CargoesRow AddCargoesRow(int Id, int SenderId, int DepartureStationId, int ArrivalStationId, double Worth) {
+            public CargoesRow AddCargoesRow(int SenderId, int DepartureStationId, int ArrivalStationId, double Worth) {
                 CargoesRow rowCargoesRow = ((CargoesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         SenderId,
                         DepartureStationId,
                         ArrivalStationId,
@@ -696,6 +696,8 @@ namespace Logistic_System {
                                 this.columnDepartureStationId}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint4", new global::System.Data.DataColumn[] {
                                 this.columnArrivalStationId}, false));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnSenderId.AllowDBNull = false;
@@ -958,10 +960,10 @@ namespace Logistic_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TransportsRow AddTransportsRow(int Id, string Name, double MaxWeight, double WeightDistancePrice, double Weight) {
+            public TransportsRow AddTransportsRow(string Name, double MaxWeight, double WeightDistancePrice, double Weight) {
                 TransportsRow rowTransportsRow = ((TransportsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Name,
                         MaxWeight,
                         WeightDistancePrice,
@@ -1017,6 +1019,8 @@ namespace Logistic_System {
                 base.Columns.Add(this.columnWeight);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnName.AllowDBNull = false;
@@ -1267,10 +1271,10 @@ namespace Logistic_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DistancesRow AddDistancesRow(int Id, int DepartureStationId, int ArrivalStationId, double Distance) {
+            public DistancesRow AddDistancesRow(int DepartureStationId, int ArrivalStationId, double Distance) {
                 DistancesRow rowDistancesRow = ((DistancesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         DepartureStationId,
                         ArrivalStationId,
                         Distance};
@@ -1326,6 +1330,8 @@ namespace Logistic_System {
                                 this.columnArrivalStationId}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint3", new global::System.Data.DataColumn[] {
                                 this.columnDepartureStationId}, false));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnDepartureStationId.AllowDBNull = false;
@@ -1576,10 +1582,10 @@ namespace Logistic_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SendersRow AddSendersRow(int Id, string Name, string Phone, string Address) {
+            public SendersRow AddSendersRow(string Name, string Phone, string Address) {
                 SendersRow rowSendersRow = ((SendersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Name,
                         Phone,
                         Address};
@@ -1631,6 +1637,8 @@ namespace Logistic_System {
                 base.Columns.Add(this.columnAddress);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnName.AllowDBNull = false;
@@ -1860,10 +1868,10 @@ namespace Logistic_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public StationsRow AddStationsRow(int Id, string Name) {
+            public StationsRow AddStationsRow(string Name) {
                 StationsRow rowStationsRow = ((StationsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Name};
                 rowStationsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStationsRow);
@@ -1907,6 +1915,8 @@ namespace Logistic_System {
                 base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnName.AllowDBNull = false;
@@ -2164,10 +2174,10 @@ namespace Logistic_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TransitsRow AddTransitsRow(int Id, int CargoId, int TransportId, int StationId, System.DateTime DateTime) {
+            public TransitsRow AddTransitsRow(int CargoId, int TransportId, int StationId, System.DateTime DateTime) {
                 TransitsRow rowTransitsRow = ((TransitsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         CargoId,
                         TransportId,
                         StationId,
@@ -2223,6 +2233,8 @@ namespace Logistic_System {
                 base.Columns.Add(this.columnDateTime);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnCargoId.AllowDBNull = false;
@@ -3120,7 +3132,7 @@ SELECT Id, SenderId, DepartureStationId, ArrivalStationId, Worth FROM Cargoes WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, SenderId, DepartureStationId, ArrivalStationId, Worth FROM dbo.Cargoes" +
@@ -3134,6 +3146,18 @@ FROM            Cargoes INNER JOIN
                          Stations AS Station1 ON Cargoes.DepartureStationId = Station1.Id INNER JOIN
                          Stations AS Station2 ON Cargoes.ArrivalStationId = Station2.Id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO Cargoes
+                         (SenderId, DepartureStationId, ArrivalStationId, Worth)
+VALUES        (@SenderId,@DepartureStationId,@ArrivalStationId,@Worth);  
+SELECT Id, SenderId, DepartureStationId, ArrivalStationId, Worth FROM Cargoes WHERE (Id = @Id)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenderId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SenderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartureStationId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DepartureStationId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArrivalStationId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ArrivalStationId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Worth", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Worth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3302,6 +3326,34 @@ FROM            Cargoes INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int SenderId, int DepartureStationId, int ArrivalStationId, double Worth, int Original_Id, int Original_SenderId, int Original_DepartureStationId, int Original_ArrivalStationId, double Original_Worth) {
             return this.Update(Original_Id, SenderId, DepartureStationId, ArrivalStationId, Worth, Original_Id, Original_SenderId, Original_DepartureStationId, Original_ArrivalStationId, Original_Worth);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(int SenderId, int DepartureStationId, int ArrivalStationId, double Worth, int Id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(SenderId));
+            command.Parameters[1].Value = ((int)(DepartureStationId));
+            command.Parameters[2].Value = ((int)(ArrivalStationId));
+            command.Parameters[3].Value = ((double)(Worth));
+            command.Parameters[4].Value = ((int)(Id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -4548,11 +4600,17 @@ SELECT Id, Name, Phone, Address FROM Senders WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Name FROM dbo.Stations";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[Stations] ([Name]) VALUES (@Name);\r\nSELECT Id, Name FROM Stati" +
+                "ons WHERE (Id = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4705,6 +4763,35 @@ SELECT Id, Name, Phone, Address FROM Senders WHERE (Id = @Id)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Name, int Original_Id, string Original_Name) {
             return this.Update(Original_Id, Name, Original_Id, Original_Name);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(string Name) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((Name == null)) {
+                throw new global::System.ArgumentNullException("Name");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
