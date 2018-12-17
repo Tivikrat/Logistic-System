@@ -12,3 +12,5 @@ D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic-System.exe
 D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic-System.pdb
 D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic_System.AddCargo.resources
 D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic_System.AddStation.resources
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic_System.AddSender.resources
+D:\Projects\GitHub\Logistic-System\Logistic-System\obj\Debug\Logistic_System.AddTransport.resources

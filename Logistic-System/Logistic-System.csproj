@@ -151,6 +151,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Add16.bmp" />
     <Content Include="Transportation.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
